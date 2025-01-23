@@ -69,7 +69,7 @@ const Login = async (req, res, next) => {
 
 		const isMatched = await user.isValidPass(input.password);
 		if (!isMatched) {
-			throw Boom.unauthorized("email or password not correct");
+			throw Boom.unauthorized("Email or password is not correct");
 		}
 
 		const accessToken = await signAccessToken({
