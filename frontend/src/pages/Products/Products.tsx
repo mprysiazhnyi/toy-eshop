@@ -50,7 +50,14 @@ const Products = () => {
   ];
   return (
     <Box>
-      <Box mt={-2} ml={-2} mr={-2}>
+      <Box
+        mt={-2}
+        ml={-2}
+        mr={-2}
+        sx={{
+          userSelect: 'none', // Disable text/image selection
+        }}
+      >
         <Carousel
           showStatus={false}
           infiniteLoop

@@ -86,6 +86,7 @@ function ProductDetail() {
             boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.4)', // A subtle shadow to lift the image container
             borderRadius: 4,
             overflow: 'hidden',
+            userSelect: 'none', // Disable text/image selection
           }}
         >
           <Carousel
