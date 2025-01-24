@@ -23,7 +23,7 @@ const Navbar: FC = () => {
           <Box>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <img
-                src="../assets/logo.png"
+                src="/assets/logo.png"
                 alt="logo"
                 height="120px"
                 style={{ objectFit: 'cover', borderRadius: '8px' }}

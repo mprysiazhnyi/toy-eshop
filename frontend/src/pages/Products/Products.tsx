@@ -45,8 +45,8 @@ const Products = () => {
   }
 
   const images = [
-    { original: '../../assets/banner.jpg' },
-    { original: '../../assets/banner2.jpg' },
+    { original: '/assets/banner.jpg' },
+    { original: '/assets/banner2.jpg' },
   ];
   return (
     <Box>
@@ -69,7 +69,7 @@ const Products = () => {
               sx={{
                 //                  background: '#edece5', // Cozy beige transition with a touch of deeper warm beige
                 //background: 'linear-gradient(135deg, #f4f1e1, #edece5)', // Cozy beige transition with a touch of deeper warm beige
-                backgroundImage: "url('assets/bg.jpg')",
+                backgroundImage: "url('/assets/bg.jpg')",
               }}
             >
               <img

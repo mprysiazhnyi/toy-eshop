@@ -81,7 +81,7 @@ function ProductDetail() {
             width: { xs: '100%' },
             position: 'relative',
             //background: 'linear-gradient(135deg, #f4f1e1, #c9c5b5)',
-            backgroundImage: "url('../assets/bg.jpg')",
+            backgroundImage: "url('/assets/bg.jpg')",
             //background: '#c9c5b5', // Subtle gradient with a muted darker beige tone
             boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.4)', // A subtle shadow to lift the image container
             borderRadius: 4,
