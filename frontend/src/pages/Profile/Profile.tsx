@@ -39,16 +39,12 @@ function Profile() {
       )}
       {loggedIn && (
         <>
-          <Typography variant="h4" fontWeight={700}>
-            Profile
-          </Typography>
-          <Box sx={{ marginTop: 2 }}>
-            <Typography variant="h6">Email: {user.email}</Typography>
-            <Typography variant="h6">Role: {user.role}</Typography>
+          <Typography variant="h5">Profile</Typography>
+          <Box mb={2} mt={2}>
+            <Typography>Email: {user.email}</Typography>
+            <Typography>Role: {user.role}</Typography>
           </Box>
 
-          <br />
-          <br />
           <Link to="/">
             <Button
               color="secondary"

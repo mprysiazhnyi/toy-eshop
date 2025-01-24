@@ -13,6 +13,8 @@ import {
   Typography,
 } from '@mui/material';
 import { AxiosError } from 'axios';
+import { Nav } from './Nav';
+import { Loading } from '../../components/Loading';
 
 interface OrderItem {
   _id: string;
@@ -28,7 +30,7 @@ const Orders: FC = () => {
   );
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   if (isError) {
@@ -37,22 +39,10 @@ const Orders: FC = () => {
 
   return (
     <div>
-      <nav>
-        <ul className="admin-menu">
-          <li>
-            <Link to="/admin">Home</Link>
-          </li>
-          <li>
-            <Link to="/admin/orders">Order</Link>
-          </li>
-          <li>
-            <Link to="/admin/products">Products</Link>
-          </li>
-        </ul>
-      </nav>
+      <Nav />
 
-      <div style={{ marginTop: 40, padding: 20 }}>
-        <Typography variant="h4" gutterBottom>
+      <div>
+        <Typography variant="h5" gutterBottom>
           Orders
         </Typography>
 

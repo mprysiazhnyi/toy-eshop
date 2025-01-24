@@ -12,8 +12,8 @@ import ProtectedProfile from './pages/Protected/ProtectedProfile';
 import ProtectedAdmin from './pages/Protected/ProtectedAdmin';
 import Orders from './pages/Admin/Orders';
 import AdminProducts from './pages/Admin/AdminProducts';
-import AdminProductDetail from './pages/Admin/AdminProductDetail';
-import NewProduct from './pages/Products/NewProduct';
+import EditProduct from './pages/Admin/EditProduct';
+import NewProduct from './pages/Admin/NewProduct';
 
 const App: FC = () => {
   return (
@@ -32,7 +32,7 @@ const App: FC = () => {
             <Route path="orders" element={<Orders />} />
             <Route path="products">
               <Route index element={<AdminProducts />} />
-              <Route path=":product_id" element={<AdminProductDetail />} />
+              <Route path=":product_id" element={<EditProduct />} />
               <Route path="new" element={<NewProduct />} />
             </Route>
           </Route>

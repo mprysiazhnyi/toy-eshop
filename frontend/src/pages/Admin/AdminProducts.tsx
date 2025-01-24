@@ -1,18 +1,13 @@
 import React, { FC, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Typography, CircularProgress } from '@mui/material';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { fetchProductList, deleteProduct } from '../../api';
 import { DataGrid } from '@mui/x-data-grid';
 import { AxiosError } from 'axios';
 import Popconfirm from 'antd/es/popconfirm';
-
-interface Product {
-  _id: string;
-  title: string;
-  price: number;
-  createdAt: string;
-}
+import { Nav } from './Nav';
+import { Loading } from '../../components/Loading';
 
 const AdminProducts: FC = () => {
   const queryClient = useQueryClient();
@@ -51,7 +46,7 @@ const AdminProducts: FC = () => {
         renderCell: (params: any) => (
           <>
             <Button
-              color="primary"
+              variant={'contained'}
               component={Link}
               to={`/admin/products/${params.row._id}`}
             >
@@ -68,7 +63,11 @@ const AdminProducts: FC = () => {
               cancelText="No"
               placement="left"
             >
-              <Button color="secondary" style={{ marginLeft: 8 }}>
+              <Button
+                variant={'contained'}
+                color="error"
+                style={{ marginLeft: 8 }}
+              >
                 Delete
               </Button>
             </Popconfirm>
@@ -79,7 +78,7 @@ const AdminProducts: FC = () => {
   }, [deleteMutation]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   if (isError) {
@@ -88,27 +87,14 @@ const AdminProducts: FC = () => {
 
   return (
     <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/admin">Home</Link>
-          </li>
-          <li>
-            <Link to="/admin/orders">Orders</Link>
-          </li>
-          <li>
-            <Link to="/admin/products">Products</Link>
-          </li>
-        </ul>
-      </nav>
+      <Nav />
 
-      <Box mt={10}>
+      <Box>
         <Box
           display="flex"
           justifyContent="space-between"
           alignItems="center"
-          p={2}
-          mb={4}
+          mb={1}
         >
           <Typography variant="h5">Products</Typography>
 
@@ -124,9 +110,9 @@ const AdminProducts: FC = () => {
 
         <div style={{ height: 400, width: '100%' }}>
           <DataGrid
-            rows={data || []}
+            rows={data.map((d) => ({ ...d, id: d._id })) || []}
             columns={columns}
-            pageSize={5}
+            pageSizeOptions={[5, 50, 100]}
             rowHeight={60}
           />
         </div>

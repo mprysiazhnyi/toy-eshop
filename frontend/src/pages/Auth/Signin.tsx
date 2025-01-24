@@ -7,13 +7,15 @@ import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 
 const validations = yup.object().shape({
-  email: yup.string().email('Geçerli bir email girin').required('zorunlu alan'),
+  email: yup
+    .string()
+    .email('Please enter a valid email')
+    .required('This field is required'),
   password: yup
     .string()
-    .min(10, 'Parolanız en az 10 karakter olmalıdır.')
+    .min(10, 'Your password must be at least 10 characters long.')
     .required(),
 });
-
 function Signin() {
   const { login } = useAuth();
 
@@ -52,15 +54,15 @@ function Signin() {
         paddingTop={10}
       >
         <Box width="400px">
-          <Typography variant="h4" align="center" gutterBottom>
+          <Typography variant="h5" align="center" gutterBottom>
             Signin
           </Typography>
-          <Box my={2}>
+          <Box>
             {formik.errors.general && (
               <Alert severity="error">{formik.errors.general}</Alert>
             )}
           </Box>
-          <Box my={2}>
+          <Box>
             <form onSubmit={formik.handleSubmit}>
               <TextField
                 fullWidth
@@ -92,7 +94,9 @@ function Signin() {
                 variant="contained"
                 color="primary"
                 fullWidth
-                sx={{ marginTop: 3 }}
+                sx={{
+                  marginTop: 3,
+                }}
               >
                 Sign In
               </Button>

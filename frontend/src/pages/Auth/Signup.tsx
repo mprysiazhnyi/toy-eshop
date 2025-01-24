@@ -51,7 +51,7 @@ function Signup() {
         paddingTop={10}
       >
         <Box width="400px">
-          <Typography variant="h4" align="center" gutterBottom>
+          <Typography variant="h5" align="center" gutterBottom>
             Signup
           </Typography>
           <Box my={2}>

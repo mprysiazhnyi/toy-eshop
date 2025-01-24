@@ -40,10 +40,21 @@ const Cards: FC<CardsProps> = ({ item }) => {
           height="300"
           image={item.photos[0]}
           alt="Product"
-          sx={{ objectFit: 'cover', borderRadius: 2 }}
+          sx={{ objectFit: 'cover', borderRadius: 2, width: '300px' }}
         />
         <CardContent>
-          <Typography variant="h6" component="div">
+          {/* Title with truncation */}
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              maxWidth: '100%', // Ensure it doesn't overflow its container
+              display: 'block', // Ensures it takes up the full width
+            }}
+          >
             {item.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -55,21 +66,16 @@ const Cards: FC<CardsProps> = ({ item }) => {
         </CardContent>
       </Link>
       <Divider />
-      <CardActions sx={{ justifyContent: 'space-between' }}>
-        <ButtonGroup
+      <CardActions sx={{ justifyContent: 'center' }}>
+        <Button
+          size={'small'}
           variant="contained"
-          aria-label="outlined primary button group"
+          fullWidth
+          color={findBasketItem ? 'error' : 'success'}
+          onClick={() => addToBasket(item, findBasketItem)}
         >
-          <Button
-            color={findBasketItem ? 'error' : 'success'}
-            onClick={() => addToBasket(item, findBasketItem)}
-          >
-            {findBasketItem ? 'Remove from Basket' : 'Add to Basket'}
-          </Button>
-          <Button variant="outlined" color="primary">
-            Add to cart
-          </Button>
-        </ButtonGroup>
+          {findBasketItem ? 'Remove from basket' : 'Add to basket'}
+        </Button>
       </CardActions>
     </Card>
   );

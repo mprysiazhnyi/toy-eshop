@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import AdminHome from '../Admin/AdminHome';
+import Home from '../Admin/Home';
 
 interface User {
   role: string;
@@ -18,7 +18,7 @@ function ProtectedAdmin() {
 
   return (
     <>
-      {loggedIn === true && user?.role === 'admin' && <AdminHome />}
+      {loggedIn === true && user?.role === 'admin' && <Home />}
       {loggedIn === true && user?.role === 'user' && <Navigate to={'/'} />}
       {loggedIn === false && <Navigate to={'/'} />}
     </>

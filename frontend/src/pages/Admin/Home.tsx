@@ -1,32 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Box, Typography, Button, Stack } from '@mui/material';
+import { Nav } from './Nav';
 
-const AdminHome: React.FC = () => {
+const Home: React.FC = () => {
   return (
-    <Box p={3}>
-      {/* Navigation Menu */}
-      <Box component="nav" mb={4}>
-        <Stack direction="row" spacing={2}>
-          <Button component={Link} to="/admin" variant="outlined">
-            Home
-          </Button>
-          <Button component={Link} to="/admin/orders" variant="outlined">
-            Orders
-          </Button>
-          <Button component={Link} to="/admin/products" variant="outlined">
-            Products
-          </Button>
-        </Stack>
-      </Box>
-
+    <Box>
+      <Nav />
       {/* Admin Dashboard Content */}
-      <Typography variant="h4" mb={4}>
+      <Typography variant="h5" mb={2}>
         Welcome, Admin
       </Typography>
 
       {/* Links to Admin Functionalities */}
-      <Box ml={3}>
+      <Box>
         <Typography variant="body1" mb={2}>
           You can see orders
           <Button
@@ -76,4 +63,4 @@ const AdminHome: React.FC = () => {
   );
 };
 
-export default AdminHome;
+export default Home;

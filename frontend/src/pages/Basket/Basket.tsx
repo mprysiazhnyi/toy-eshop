@@ -41,7 +41,7 @@ function Basket() {
   };
 
   return (
-    <Box p={5}>
+    <Box>
       {items.length < 1 && (
         <Alert severity="warning">
           <AlertTitle>No items in your basket</AlertTitle>
@@ -54,7 +54,7 @@ function Basket() {
             {items.map((item) => (
               <ImageListItem key={item._id}>
                 <Link to={`/product/${item._id}`}>
-                  <Typography variant="h6">
+                  <Typography variant="h6" fontWeight={600} mb={1}>
                     {item.title} - {item.price} $
                   </Typography>
                   <img
@@ -67,7 +67,7 @@ function Basket() {
                 </Link>
                 <Button
                   onClick={() => removeFromBasket(item._id)}
-                  variant="outlined"
+                  variant="contained"
                   color="error"
                   size="small"
                   sx={{ mt: 2 }}
@@ -85,7 +85,7 @@ function Basket() {
             onClick={() => setIsModalOpen(true)}
             color="primary"
             variant="contained"
-            sx={{ mt: 4 }}
+            sx={{ mt: 2 }}
           >
             Buy now
           </Button>
