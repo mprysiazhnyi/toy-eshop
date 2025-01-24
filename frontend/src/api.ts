@@ -1,9 +1,5 @@
 import axios from 'axios';
 
-const env = await import.meta.env;
-
-console.log(env);
-
 axios.interceptors.request.use(
   (config) => {
     const { origin } = new URL(config.url as string);
