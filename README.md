@@ -21,7 +21,7 @@
 
 - you have to enter the frontend folder by typing `cd frontend` in the terminal
 - In the project directory,Install libraries by typing `yarn`
-- Then Run backend project with `yarn start`
+- Then Run backend project with `yarn dev`
 - You can reach the project from [localhost:3000](http://localhost:3000/)
 
 ---
@@ -44,18 +44,18 @@
 
 ### frontend
 
-- @chakra-ui/react
+- material-ui
+- vite
+- typescript
+- simple-react-lightbox
+- react-responsive-carousel
 - antd
 - axios
 - formik
-- framer-motion
 - moment
 - react-dom
-- react-image-gallery
 - react-query
 - react-router-dom
-- react-scripts
-- web-vitals
 - yup
 
 ### database
