@@ -13,7 +13,7 @@ export default defineConfig({
   envDir: '../',
 
   // depending on your application, base can also be "/"
-  base: '',
+  base: '/', // Ensures assets are served from the root
   plugins: [react(), viteTsconfigPaths()],
   server: {
     // this ensures that the browser opens upon server start
