@@ -130,6 +130,8 @@ const Products = () => {
                       '&:hover': {
                         transform: 'scale(1.05)', // Slightly enlarge on hover
                       },
+                      width: '100%',
+                      maxWidth: '345px',
                     }}
                   >
                     <Cards item={item} />

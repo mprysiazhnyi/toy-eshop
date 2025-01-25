@@ -40,7 +40,10 @@ const Cards: FC<CardsProps> = ({ item }) => {
           height="300"
           image={item.photos[0]}
           alt="Product"
-          sx={{ objectFit: 'cover', borderRadius: 2, width: '300px' }}
+          sx={{
+            objectFit: 'cover',
+            width: '100%',
+          }}
         />
         <CardContent>
           {/* Title with truncation */}
