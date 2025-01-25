@@ -1,7 +1,7 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { fetchProduct, Product, updateProduct } from '../../api';
-import { useQuery } from 'react-query';
+import { useQuery, useQueryClient } from 'react-query';
 
 import { Box, TextField, Button, Typography } from '@mui/material';
 
@@ -22,6 +22,8 @@ const editScheme = yup.object().shape({
 
 const EditProduct = () => {
   const { product_id = '' } = useParams();
+  const queryClient = useQueryClient();
+  const navigate = useNavigate();
 
   const { isLoading, isError, data, error } = useQuery(
     ['admin:product', product_id],
@@ -44,12 +46,16 @@ const EditProduct = () => {
 
     try {
       await updateProduct(values, product_id);
+      await queryClient.invalidateQueries('admin:products');
+      await queryClient.invalidateQueries('products');
+      console.log('ivalidate');
 
       message.success({
         content: 'The product successfully updated',
         key: 'product_update',
         duration: 2,
       });
+      navigate('/admin/products');
     } catch (e) {
       message.error('The product does not update.');
     }

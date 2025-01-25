@@ -42,7 +42,6 @@ const root: ReactDOM.Root = ReactDOM.createRoot(
 const queryClient: QueryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      refetchOnMount: false,
       refetchOnWindowFocus: false,
     },
   },

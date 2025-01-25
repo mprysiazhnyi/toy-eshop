@@ -108,11 +108,16 @@ const AdminProducts: FC = () => {
           </Button>
         </Box>
 
-        <div style={{ height: 400, width: '100%' }}>
+        <div style={{ height: 'auto', width: '100%' }}>
           <DataGrid
+            initialState={{
+              pagination: {
+                paginationModel: { pageSize: 5 },
+              },
+            }}
             rows={data.map((d) => ({ ...d, id: d._id })) || []}
             columns={columns}
-            pageSizeOptions={[5, 50, 100]}
+            pageSizeOptions={[5]}
             rowHeight={60}
           />
         </div>

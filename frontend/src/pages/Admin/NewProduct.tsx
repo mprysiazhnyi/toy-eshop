@@ -1,7 +1,7 @@
 import React from 'react';
 import { useMutation, useQueryClient } from 'react-query';
-import { Box, Button, TextField, Grid2, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Box, Button, Typography } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
 import { Formik, FieldArray } from 'formik';
 import { message } from 'antd';
 import { postProduct } from '../../api';
@@ -17,8 +17,13 @@ const editScheme = yup.object().shape({
 
 const NewProduct = () => {
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
   const newProductMutation = useMutation(postProduct, {
-    onSuccess: () => queryClient.invalidateQueries('admin:products'),
+    onSuccess: () => {
+      queryClient.invalidateQueries('admin:products');
+      queryClient.invalidateQueries('products');
+      navigate('/admin/products');
+    },
   });
 
   const handleSubmit = async (values: FormValues, bag: any) => {

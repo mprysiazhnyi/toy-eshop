@@ -95,7 +95,7 @@ const Products = () => {
         </Carousel>
       </Box>
       <Box
-        mt={2}
+        mt={4}
         sx={{
           width: '100%',
           display: 'flex',
@@ -140,7 +140,7 @@ const Products = () => {
           ))}
         </Grid2>
       </Box>
-      <Box mt={2} display="flex" justifyContent="center">
+      <Box mt={3} mb={1} display="flex" justifyContent="center">
         <Button
           onClick={() => fetchNextPage()}
           variant="contained"
