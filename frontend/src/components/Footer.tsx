@@ -89,7 +89,7 @@ export const Footer = () => {
           <NewsletterSection>
             <Box>
               <Typography variant="h6" fontWeight="bold">
-                TeddyShop Newsletter
+                ToyStore Newsletter
               </Typography>
               <Typography variant="body1" marginTop={1}>
                 Stay updated on the latest news, promotions, and special offers.
@@ -231,7 +231,7 @@ export const Footer = () => {
         </Link>
         {/* Footer Copyright Section */}
         <Typography variant="body2" color="textSecondary">
-          © 2023 TeddyShop. All rights reserved.
+          © 2023 ToyStore. All rights reserved.
         </Typography>
       </Box>
     </>

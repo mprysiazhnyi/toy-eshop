@@ -155,7 +155,7 @@ const Home = () => {
         fontWeight={600}
         color={'primary'}
       >
-        Explore and find your favorite on TeddyShop
+        Explore and find your favorite on ToyStore
       </Typography>
       <Typography
         mb={2}
