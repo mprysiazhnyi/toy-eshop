@@ -16,6 +16,7 @@ import EditProduct from './pages/Admin/EditProduct';
 import NewProduct from './pages/Admin/NewProduct';
 import { Box, Typography } from '@mui/material';
 import { Footer } from './components/Footer';
+import ScrollToTop from './ScrollToTop';
 
 const App: FC = () => {
   return (
@@ -37,6 +38,7 @@ const App: FC = () => {
       </Box>
       <Navbar />
       <div id="content">
+        <ScrollToTop /> {/* This will ensure scroll resets */}
         <Routes>
           <Route path="/" index element={<Home />} />
           <Route path="/product/:product_id" element={<ProductDetail />} />
