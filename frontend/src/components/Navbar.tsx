@@ -10,12 +10,18 @@ const Navbar: FC = () => {
   const { items }: { items: any[] } = useBasket();
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: '#f4f1e1', zIndex: 1000 }}>
+    <AppBar
+      position="sticky"
+      sx={{
+        backgroundColor: 'white',
+        zIndex: 1000,
+      }}
+    >
       <Toolbar>
         <Box
           sx={{
             display: 'flex',
-            alignItems: 'end',
+            alignItems: 'center',
             justifyContent: 'space-between',
             width: '100%',
           }}
@@ -23,17 +29,17 @@ const Navbar: FC = () => {
           <Box>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <img
-                src="/assets/logo.png"
+                src="/assets/logo.jpg"
                 alt="logo"
-                height="120px"
+                height="70px"
                 style={{ objectFit: 'cover', borderRadius: '8px' }}
               />
             </Link>
           </Box>
 
-          <Box mb={2}>
+          <Box>
             <Button variant="text" component={Link} to="/">
-              Products
+              Home
             </Button>
             {!loggedIn ? (
               <>

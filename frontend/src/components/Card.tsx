@@ -43,6 +43,9 @@ const Cards: FC<CardsProps> = ({ item }) => {
           sx={{
             objectFit: 'cover',
             width: '100%',
+            border: '2px solid white',
+            borderTopLeftRadius: 31,
+            borderTopRightRadius: 31,
           }}
         />
         <CardContent>
@@ -73,9 +76,13 @@ const Cards: FC<CardsProps> = ({ item }) => {
         <Button
           size={'small'}
           variant="contained"
-          fullWidth
           color={findBasketItem ? 'error' : 'success'}
           onClick={() => addToBasket(item, findBasketItem)}
+          sx={{
+            borderRadius: 31,
+            width: 'calc(100% - 30px)',
+            backgroundColor: !findBasketItem ? '#89D3D1' : undefined,
+          }}
         >
           {findBasketItem ? 'Remove from basket' : 'Add to basket'}
         </Button>

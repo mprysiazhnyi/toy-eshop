@@ -24,7 +24,7 @@ export const Nav = () => {
       >
         <Tab value="/admin" label="Home" wrapped />
         <Tab value="/admin/orders" label="Orders" />
-        <Tab value="/admin/products" label="Products" />
+        <Tab value="/admin/products" label="Home" />
       </Tabs>
     </Box>
   );

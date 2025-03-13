@@ -14,13 +14,13 @@ import CssBaseline from '@mui/material/CssBaseline';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#D97A21', // Lego orange for primary buttons
+      main: '#29180F', // Lego orange for primary buttons
     },
     secondary: {
       main: '#a76b40', // Soft brown for secondary buttons
     },
     background: {
-      default: '#f9f4f0', // Soft beige background
+      default: '#F7F2EC', // Soft beige background
     },
     success: {
       main: '#6cbf6d', // A gentle green success color
@@ -32,7 +32,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Arial", sans-serif',
+    fontFamily: '"Roboto Serif", sans-serif', // Use Roboto globally
   },
 });
 
