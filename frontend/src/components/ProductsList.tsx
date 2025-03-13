@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Grid2,
-  Box,
-  Button,
-  Typography,
-  CircularProgress,
-} from '@mui/material';
+import { Grid2, Box, Button, Typography } from '@mui/material';
 import { useInfiniteQuery } from 'react-query';
 import { AxiosError } from 'axios';
 import { fetchProductList } from '../api';

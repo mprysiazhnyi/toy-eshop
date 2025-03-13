@@ -7,10 +7,8 @@ export const Loading = () => {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      height="100vh"
-      top={0}
+      height="20vh"
       width="100%"
-      position={'absolute'}
     >
       <CircularProgress size={60} color="primary" />
     </Box>
